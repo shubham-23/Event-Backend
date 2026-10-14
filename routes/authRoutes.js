@@ -56,11 +56,6 @@ router.get('/me', protect, async (req, res) => {
   res.status(200).json({ success: true, data: req.user });
 });
 
-// PUT /api/auth/profile (Update Profile)
-router.get('/me', protect, async (req, res) => {
-  res.status(200).json({ success: true, data: req.user });
-});
-
 router.put('/profile', protect, async (req, res) => {
   try {
     const user = await User.findById(req.user._id);
